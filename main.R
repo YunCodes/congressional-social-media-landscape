@@ -1,16 +1,17 @@
-library(readr)
-library(tidyverse)
-library(igraph)
-library(egor)
+# GR5018 Adv Analytic Techniques
+# Prof. Greg Eirich
+# Assignment #1 
+# Yun Choi
 
-# Import 
+
 data_path <- "https://raw.githubusercontent.com/pablobarbera/data-science-workshop/master/sna/data/"
 congress_twitter_network_edges <- read_csv(data_path, "congress-twitter-network-edges.csv")
 congress_twitter_network_nodes <- read_csv(data_path, "congress-twitter-network-nodes.csv")
 
-congress_twitter_network_edges <- read_csv("congress_twitter_network_edges.csv")
-congress_twitter_network_nodes <- read_csv("congress_twitter_network_nodes.csv")
 
+
+
+# 
 congress_twitter_network_edges <- congress_twitter_network_edges %>%
   rename(id_1 = source, id_2 = target) %>%
   mutate(id_1 = as.character(id_1), id_2 = as.character(id_2))
